@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>محمد محسن | ابن البصرة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050510;
+  --deep:#080818;
+  --card:#0e1128;
+  --card2:#111530;
+  --border:rgba(100,180,255,0.12);
+  --electric:#38bdf8;
+  --violet:#818cf8;
+  --pink:#f472b6;
+  --gold:#fbbf24;
+  --green:#34d399;
+  --white:#e2e8f0;
+  --muted:#64748b;
+  --glow-e:0 0 30px rgba(56,189,248,0.35);
+  --glow-v:0 0 30px rgba(129,140,248,0.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Tajawal',sans-serif;overflow-x:hidden;}
+
+/* ══ SCROLLBAR ══ */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--electric);border-radius:4px;}
+
+/* ══ CURSOR (desktop only) ══ */
+@media(pointer:fine){
+  body{cursor:none;}
+  .cur,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);}
+  .cur{width:10px;height:10px;background:var(--electric);mix-blend-mode:difference;transition:transform .1s;}
+  .cur-ring{width:36px;height:36px;border:1.5px solid var(--electric);opacity:.55;transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
+}
+
+/* ══ PARTICLES ══ */
+#cv{position:fixed;inset:0;z-index:0;pointer-events:none;}
+
+/* ══ NAV ══ */
+nav{
+  position:fixed;top:0;width:100%;z-index:800;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2rem;
+  background:rgba(5,5,16,.8);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s;
+}
+.logo{
+  font-family:'Space Mono',monospace;
+  font-size:1rem;letter-spacing:3px;color:var(--electric);
+  display:flex;align-items:center;gap:.4rem;
+}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:blinkDot 2s infinite;}
+@keyframes blinkDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.nav-links{display:flex;gap:1.5rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.5px;transition:color .25s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;right:0;width:0;height:1.5px;background:var(--electric);transition:width .3s;}
+.nav-links a:hover{color:var(--electric);}
+.nav-links a:hover::after{width:100%;}
+.nav-pill{
+  background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(129,140,248,.15));
+  border:1px solid var(--border);
+  color:var(--electric);font-family:'Space Mono',monospace;
+  font-size:.65rem;padding:.3rem .7rem;border-radius:20px;letter-spacing:2px;
+  white-space:nowrap;
+}
+/* Mobile nav */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.3rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--electric);border-radius:2px;transition:all .3s;}
+.mobile-menu{
+  display:none;position:fixed;top:60px;left:0;right:0;
+  background:rgba(8,8,24,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:1.5rem 2rem;z-index:799;
+  flex-direction:column;gap:1.2rem;
+}
+.mobile-menu a{color:var(--muted);text-decoration:none;font-size:1rem;padding:.4rem 0;border-bottom:1px solid var(--border);transition:color .2s;}
+.mobile-menu a:hover{color:var(--electric);}
+.mobile-menu.open{display:flex;}
+@media(max-width:768px){
+  .nav-links,.nav-pill{display:none;}
+  .hamburger{display:flex;}
+}
+
+/* ══ HERO ══ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:7rem 1.5rem 4rem;
+  text-align:center;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(56,189,248,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:gridDrift 25s linear infinite;
+}
+@keyframes gridDrift{from{background-position:0 0;}to{background-position:60px 60px;}}
+
+.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
+.orb1{width:500px;height:500px;background:rgba(129,140,248,.2);top:-80px;right:-120px;animation:orbF 9s ease-in-out infinite;}
+.orb2{width:350px;height:350px;background:rgba(56,189,248,.18);bottom:-60px;left:-80px;animation:orbF 7s ease-in-out infinite reverse;}
+.orb3{width:250px;height:250px;background:rgba(244,114,182,.1);top:40%;left:30%;animation:orbF 11s ease-in-out infinite 3s;}
+@keyframes orbF{0%,100%{transform:translateY(0)scale(1);}50%{transform:translateY(-25px)scale(1.06);}}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);
+  border-radius:30px;padding:.4rem 1.2rem;margin-bottom:2rem;
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:2px;color:var(--electric);
+  opacity:0;animation:fadeUp .7s .2s forwards;
+}
+.hero-badge-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blinkDot 1.5s infinite;}
+
+.hero-name{
+  font-family:'Cairo',sans-serif;font-weight:900;
+  font-size:clamp(2.8rem,9vw,7rem);line-height:1.05;margin-bottom:.8rem;
+  opacity:0;animation:fadeUp .7s .4s forwards;
+}
+.hero-name .n1{color:var(--white);display:block;}
+.hero-name .n2{
+  display:block;
+  background:linear-gradient(135deg,var(--electric) 0%,var(--violet) 50%,var(--pink) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200% 200%;animation:gradShift 4s ease infinite;
+}
+@keyframes gradShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+.hero-sub{
+  font-size:clamp(.9rem,2.5vw,1.2rem);color:var(--muted);
+  line-height:1.9;font-weight:300;max-width:650px;margin:0 auto 2.5rem;
+  opacity:0;animation:fadeUp .7s .6s forwards;
+}
+.hero-sub strong{color:var(--electric);}
+
+.hero-stats{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem 3rem;
+  margin-bottom:2.8rem;opacity:0;animation:fadeUp .7s .8s forwards;
+}
+.hs{text-align:center;}
+.hs-num{
+  font-family:'Space Mono',monospace;font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:700;color:var(--electric);display:block;line-height:1;
+}
+.hs-lbl{font-size:.72rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:.4rem;}
+
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .7s 1s forwards;
+}
+.btn-p{
+  padding:.85rem 2.2rem;background:linear-gradient(135deg,var(--electric),var(--violet));
+  color:#020210;font-weight:800;font-size:.9rem;border:none;border-radius:6px;
+  text-decoration:none;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;
+  display:inline-block;
+}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(56,189,248,.45);}
+.btn-s{
+  padding:.85rem 2.2rem;background:transparent;color:var(--electric);
+  font-weight:600;font-size:.9rem;border:1.5px solid var(--electric);border-radius:6px;
+  text-decoration:none;letter-spacing:.5px;transition:all .2s;display:inline-block;
+}
+.btn-s:hover{background:rgba(56,189,248,.1);transform:translateY(-3px);}
+
+.scroll-ind{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  opacity:0;animation:fadeUp .7s 1.4s forwards;
+}
+.scroll-ind span{font-size:.65rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
+.scroll-mouse{width:20px;height:30px;border:1.5px solid var(--muted);border-radius:10px;position:relative;display:flex;justify-content:center;}
+.scroll-mouse::after{content:'';position:absolute;top:5px;width:3px;height:5px;background:var(--electric);border-radius:3px;animation:scrollBob 1.6s infinite;}
+@keyframes scrollBob{0%{top:5px;opacity:1;}80%{top:17px;opacity:0;}100%{top:5px;opacity:0;}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ MARQUEE ══ */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.9rem 0;background:var(--deep);position:relative;z-index:1;}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite;gap:3rem;align-items:center;}
+.marquee-track span{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+.marquee-track .m-hi{color:var(--electric);}
+.marquee-track .m-sep{color:var(--violet);font-size:1rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ══ SECTION BASE ══ */
+section{position:relative;z-index:1;padding:6rem 1.5rem;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-tag{
+  font-family:'Space Mono',monospace;font-size:.68rem;color:var(--electric);
+  letter-spacing:4px;text-transform:uppercase;margin-bottom:.7rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.sec-tag::before{content:'';display:inline-block;width:28px;height:1px;background:var(--electric);}
+.sec-h{
+  font-family:'Cairo',sans-serif;font-size:clamp(1.8rem,4vw,3.2rem);
+  font-weight:900;color:var(--white);margin-bottom:1.2rem;line-height:1.2;
+}
+.sec-h em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--electric),var(--violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.sec-p{color:var(--muted);font-size:1rem;line-height:1.9;font-weight:300;max-width:580px;}
+.sec-center{text-align:center;}
+.sec-center .sec-tag{justify-content:center;}
+.sec-center .sec-p{margin:0 auto;}
+
+/* ══ REVEAL ══ */
+.rev{opacity:0;transform:translateY(35px);transition:opacity .7s,transform .7s;}
+.rev.vis{opacity:1;transform:translateY(0);}
+.rev-l{opacity:0;transform:translateX(-35px);transition:opacity .7s,transform .7s;}
+.rev-l.vis{opacity:1;transform:translateX(0);}
+.rev-r{opacity:0;transform:translateX(35px);transition:opacity .7s,transform .7s;}
+.rev-r.vis{opacity:1;transform:translateX(0);}
+
+/* ══ ABOUT ══ */
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:4rem;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem;}}
+
+/* avatar */
+.avatar-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
+.avatar-rings{position:relative;width:240px;height:240px;margin:0 auto;}
+.ring-outer{
+  position:absolute;inset:0;border-radius:50%;
+  border:1.5px solid rgba(56,189,248,.2);
+  animation:spinR 20s linear infinite;
+}
+.ring-outer::before{
+  content:'';position:absolute;width:10px;height:10px;background:var(--electric);
+  border-radius:50%;top:-5px;left:50%;transform:translateX(-50%);
+  box-shadow:var(--glow-e);
+}
+.ring-mid{
+  position:absolute;inset:20px;border-radius:50%;
+  border:1.5px dashed rgba(129,140,248,.25);
+  animation:spinR 14s linear infinite reverse;
+}
+.ring-mid::before{
+  content:'';position:absolute;width:8px;height:8px;background:var(--violet);
+  border-radius:50%;top:-4px;left:50%;transform:translateX(-50%);
+  box-shadow:var(--glow-v);
+}
+@keyframes spinR{to{transform:rotate(360deg);}}
+.avatar-core{
+  position:absolute;inset:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--card2),var(--card));
+  border:2px solid var(--electric);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:var(--glow-e),inset 0 0 30px rgba(56,189,248,.08);
+}
+.avatar-emoji{font-size:3rem;}
+.avatar-init{
+  font-family:'Cairo',sans-serif;font-weight:900;font-size:1.1rem;
+  color:var(--electric);letter-spacing:3px;margin-top:.2rem;
+}
+
+.info-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+.pill{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:.4rem .9rem;
+  font-size:.78rem;color:var(--muted);
+  display:flex;align-items:center;gap:.4rem;
+  transition:border-color .25s,color .25s;
+}
+.pill:hover{border-color:var(--electric);color:var(--electric);}
+.pill-icon{font-size:.9rem;}
+
+/* about text */
+.about-desc{color:var(--muted);line-height:2;font-size:.98rem;margin:1.5rem 0 2rem;}
+.about-desc strong{color:var(--electric);}
+
+.info-rows{display:flex;flex-direction:column;gap:.7rem;}
+.ir{
+  display:flex;align-items:center;gap:.8rem;
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:.8rem 1rem;transition:border-color .25s,transform .2s;
+}
+.ir:hover{border-color:var(--electric);transform:translateX(-4px);}
+.ir-icon{font-size:1.1rem;flex-shrink:0;}
+.ir-label{font-size:.75rem;color:var(--muted);display:block;}
+.ir-val{font-size:.92rem;color:var(--white);font-weight:600;}
+
+/* ══ ACHIEVEMENTS ══ */
+.ach-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:3.5rem;}
+.ach-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:1.8rem;position:relative;overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.ach-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:160px;height:160px;border-radius:50%;
+  opacity:0;transition:opacity .3s;
+}
+.ach-card:hover::before{opacity:1;}
+.ach-card.c-e::before{background:radial-gradient(circle,rgba(56,189,248,.15),transparent 70%);}
+.ach-card.c-v::before{background:radial-gradient(circle,rgba(129,140,248,.15),transparent 70%);}
+.ach-card.c-g::before{background:radial-gradient(circle,rgba(251,191,36,.12),transparent 70%);}
+.ach-card.c-p::before{background:radial-gradient(circle,rgba(244,114,182,.12),transparent 70%);}
+.ach-card:hover{transform:translateY(-6px);border-color:var(--electric);box-shadow:0 20px 60px rgba(56,189,248,.12);}
+.ach-icon{font-size:2.2rem;margin-bottom:1rem;}
+.ach-title{font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;color:var(--white);margin-bottom:.4rem;}
+.ach-num{font-family:'Space Mono',monospace;font-size:2.4rem;font-weight:700;line-height:1;margin-bottom:.5rem;}
+.cn-e{color:var(--electric);}
+.cn-v{color:var(--violet);}
+.cn-g{color:var(--gold);}
+.cn-p{color:var(--pink);}
+.ach-desc{color:var(--muted);font-size:.82rem;line-height:1.65;}
+
+/* ══ NUMBERS TICKER ══ */
+.ticker-section{
+  background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(129,140,248,.06));
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:4rem 1.5rem;
+}
+.ticker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1000px;margin:0 auto;text-align:center;}
+@media(max-width:600px){.ticker-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;}}
+.tg{position:relative;}
+.tg-val{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;
+  background:linear-gradient(135deg,var(--electric),var(--violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;line-height:1;
+}
+.tg-suf{font-family:'Space Mono',monospace;font-size:1.3rem;color:var(--gold);}
+.tg-lbl{color:var(--muted);margin-top:.7rem;font-size:.8rem;line-height:1.5;}
+
+/* ══ SKILLS ══ */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3.5rem;}
+.skill-box{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;
+  transition:border-color .3s;
+}
+.skill-box:hover{border-color:var(--electric);}
+.sk-head{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;}
+.sk-icon{font-size:1.8rem;}
+.sk-title{font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;color:var(--white);}
+.sk-bars{display:flex;flex-direction:column;gap:.9rem;}
+.sb-item{}
+.sb-row{display:flex;justify-content:space-between;margin-bottom:.3rem;}
+.sb-name{font-size:.78rem;color:var(--muted);}
+.sb-pct{font-size:.72rem;color:var(--electric);font-family:'Space Mono',monospace;}
+.sb-track{height:3.5px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
+.sb-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--electric),var(--violet));width:0;transition:width 1.6s cubic-bezier(.4,0,.2,1);}
+
+/* ══ LANGUAGES ══ */
+.lang-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3.5rem;justify-items:center;}
+.lang-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:2.5rem 2rem;text-align:center;width:100%;max-width:250px;
+  position:relative;overflow:hidden;transition:all .3s;
+}
+.lang-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transition:height .3s;}
+.lang-ar::after{background:linear-gradient(90deg,#16a34a,#4ade80);}
+.lang-en::after{background:linear-gradient(90deg,#1d4ed8,#60a5fa);}
+.lang-card:hover{transform:translateY(-7px);box-shadow:0 20px 60px rgba(56,189,248,.14);border-color:var(--electric);}
+.lang-card:hover::after{height:5px;}
+.lc-flag{font-size:3.2rem;margin-bottom:1rem;display:block;}
+.lc-name{font-family:'Cairo',sans-serif;font-size:1.4rem;font-weight:900;color:var(--white);margin-bottom:.4rem;}
+.lc-level{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--electric);letter-spacing:2px;text-transform:uppercase;margin-bottom:.7rem;}
+.lc-desc{color:var(--muted);font-size:.82rem;line-height:1.6;}
+
+/* ══ TIMELINE ══ */
+.tl-wrap{position:relative;padding-right:0;padding-left:2.5rem;margin-top:3.5rem;}
+.tl-wrap::before{
+  content:'';position:absolute;left:.95rem;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,transparent,var(--electric),var(--violet),transparent);
+}
+.tl-item{
+  position:relative;margin-bottom:2.5rem;
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem 1.8rem;transition:border-color .3s,transform .3s;
+}
+.tl-item:hover{border-color:var(--electric);transform:translateX(5px);}
+.tl-dot{
+  position:absolute;left:-1.8rem;top:1.6rem;
+  width:13px;height:13px;border-radius:50%;border:2px solid var(--bg);
+}
+.tl-dot-e{background:var(--electric);box-shadow:0 0 15px var(--electric);}
+.tl-dot-g{background:var(--gold);box-shadow:0 0 15px var(--gold);}
+.tl-dot-v{background:var(--violet);box-shadow:0 0 15px var(--violet);}
+.tl-year{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--electric);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;}
+.tl-event{font-family:'Cairo',sans-serif;font-weight:700;font-size:1.05rem;color:var(--white);margin-bottom:.4rem;}
+.tl-detail{color:var(--muted);font-size:.85rem;line-height:1.7;}
+.tl-badge{
+  display:inline-block;margin-top:.8rem;
+  background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);
+  color:var(--electric);font-size:.65rem;padding:.2rem .6rem;border-radius:4px;
+  font-family:'Space Mono',monospace;letter-spacing:1px;
+}
+.tl-badge-g{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);color:var(--gold);}
+
+/* ══ INTERESTS ══ */
+.int-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.int-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin-top:3.5rem;}
+.int-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.6rem 1.2rem;text-align:center;transition:all .3s;cursor:default;
+  position:relative;overflow:hidden;
+}
+.int-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(129,140,248,.07));
+  opacity:0;transition:opacity .3s;
+}
+.int-card:hover{border-color:var(--electric);transform:scale(1.04);}
+.int-card:hover::before{opacity:1;}
+.int-em{font-size:2.4rem;display:block;margin-bottom:.7rem;}
+.int-name{font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;color:var(--white);}
+.int-note{font-size:.72rem;color:var(--muted);margin-top:.3rem;}
+
+/* ══ CREATIVE SECTION (floating cards) ══ */
+.creative-section{overflow:hidden;}
+.creative-inner{max-width:1100px;margin:0 auto;}
+.float-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.5rem;margin-top:3.5rem;
+}
+.fc{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:2rem 1.5rem;text-align:center;
+  animation:floatCard 5s ease-in-out infinite;
+  transition:border-color .3s;
+}
+.fc:nth-child(2){animation-delay:-1.5s;}
+.fc:nth-child(3){animation-delay:-3s;}
+.fc:nth-child(4){animation-delay:-4.2s;}
+.fc:hover{border-color:var(--electric);}
+@keyframes floatCard{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.fc-icon{font-size:2.5rem;display:block;margin-bottom:1rem;}
+.fc-title{font-family:'Cairo',sans-serif;font-weight:700;font-size:1rem;color:var(--white);margin-bottom:.4rem;}
+.fc-val{
+  font-family:'Space Mono',monospace;font-size:1.8rem;font-weight:700;
+  color:var(--electric);display:block;margin-bottom:.4rem;
+}
+.fc-desc{color:var(--muted);font-size:.8rem;line-height:1.6;}
+
+/* ══ QUOTE ══ */
+.quote-section{
+  background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(129,140,248,.05));
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  text-align:center;padding:5rem 1.5rem;
+}
+.qm{
+  font-size:5rem;font-family:Georgia,serif;
+  color:var(--electric);opacity:.25;line-height:.5;display:block;margin-bottom:1rem;
+}
+.qt{
+  font-family:'Cairo',sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);
+  font-weight:700;color:var(--white);max-width:750px;margin:0 auto 1.5rem;line-height:1.7;
+}
+.qa{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--electric);letter-spacing:3px;text-transform:uppercase;}
+
+/* ══ PROJECT CARD ══ */
+.proj-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:2.5rem;position:relative;overflow:hidden;margin-top:3.5rem;
+}
+.proj-card::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(56,189,248,.1),transparent 70%);
+}
+.proj-tag{
+  font-family:'Space Mono',monospace;font-size:.68rem;color:var(--violet);
+  letter-spacing:2px;margin-bottom:.8rem;
+}
+.proj-title{font-family:'Cairo',sans-serif;font-size:1.8rem;font-weight:900;color:var(--white);margin-bottom:1rem;}
+.proj-desc{color:var(--muted);line-height:1.9;margin-bottom:1.8rem;font-size:.95rem;}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.tt{
+  background:rgba(129,140,248,.15);border:1px solid rgba(129,140,248,.25);
+  color:var(--violet);font-size:.72rem;padding:.25rem .6rem;
+  border-radius:4px;font-family:'Space Mono',monospace;letter-spacing:.5px;
+}
+
+/* ══ BASRA PRIDE ══ */
+.basra-section{
+  background:linear-gradient(135deg,#050510,#0a0520);
+  border-top:1px solid var(--border);text-align:center;
+  overflow:hidden;position:relative;
+}
+.basra-bg-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Cairo',sans-serif;font-size:clamp(6rem,20vw,14rem);
+  font-weight:900;color:rgba(56,189,248,.04);white-space:nowrap;
+  pointer-events:none;user-select:none;letter-spacing:.1em;
+}
+.basra-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.basra-flag{font-size:4rem;display:block;margin-bottom:1.5rem;animation:wavFlag 2s ease-in-out infinite;}
+@keyframes wavFlag{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.basra-title{
+  font-family:'Cairo',sans-serif;font-size:clamp(2rem,6vw,4.5rem);
+  font-weight:900;color:var(--white);margin-bottom:1rem;
+}
+.basra-title em{font-style:normal;color:var(--electric);}
+.basra-sub{color:var(--muted);font-size:1rem;line-height:1.9;max-width:600px;margin:0 auto 2.5rem;}
+.basra-info{
+  display:inline-flex;flex-wrap:wrap;gap:1rem;justify-content:center;
+}
+.bi{
+  background:rgba(56,189,248,.08);border:1px solid var(--border);
+  border-radius:8px;padding:.7rem 1.2rem;text-align:center;
+}
+.bi-val{font-family:'Space Mono',monospace;font-size:1.1rem;color:var(--electric);display:block;}
+.bi-lbl{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+
+/* ══ FOOTER ══ */
+footer{
+  background:var(--deep);border-top:1px solid var(--border);
+  padding:4rem 1.5rem 2rem;text-align:center;position:relative;z-index:1;
+}
+.ft-name{
+  font-family:'Cairo',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;
+  background:linear-gradient(135deg,var(--electric),var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.5rem;
+}
+.ft-sub{color:var(--muted);margin-bottom:2rem;font-size:.95rem;}
+.ft-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;}
+.ft-links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;}
+.ft-links a:hover{color:var(--electric);}
+.ft-sep{display:flex;align-items:center;gap:1rem;max-width:400px;margin:0 auto 2rem;}
+.ft-sep-line{flex:1;height:1px;background:var(--border);}
+.ft-sep-dot{width:6px;height:6px;background:var(--electric);border-radius:50%;}
+.ft-bottom{color:var(--muted);font-size:.75rem;font-family:'Space Mono',monospace;line-height:2;}
+.ft-bottom em{color:var(--electric);}
+
+/* ══ TYPING EFFECT ══ */
+.typing-cursor{display:inline-block;width:2px;height:1.1em;background:var(--electric);margin-right:2px;animation:blink .7s step-end infinite;vertical-align:middle;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* ══ GLOW LINES (decorative) ══ */
+.gline{
+  height:1px;background:linear-gradient(90deg,transparent,var(--electric),transparent);
+  margin:0;opacity:.3;
+}
+
+/* ══ MUSIC PLAYER ══ */
+#music-player{
+  position:fixed;bottom:1.5rem;left:1.2rem;z-index:900;
+  display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;
+  background:rgba(8,8,24,.88);
+  border:1.5px solid var(--electric);
+  border-radius:16px;padding:.7rem 1rem;
+  box-shadow:0 0 24px rgba(56,189,248,.22);
+  backdrop-filter:blur(18px);
+  min-width:200px;max-width:240px;
+  transition:box-shadow .3s;
+  touch-action:pan-y;
+}
+#music-player.playing{
+  animation:musicPulse 2.4s ease-in-out infinite;
+}
+@keyframes musicPulse{0%,100%{box-shadow:0 0 20px rgba(56,189,248,.25);}50%{box-shadow:0 0 40px rgba(56,189,248,.6);}}
+
+#track-info{
+  width:100%;overflow:hidden;
+}
+#track-name{
+  display:block;
+  font-family:'Tajawal',sans-serif;font-size:.72rem;
+  color:var(--electric);letter-spacing:.4px;
+  white-space:nowrap;
+  animation:none;
+}
+#track-name.scroll-text{
+  display:inline-block;
+  animation:scrollTrack 8s linear infinite;
+}
+@keyframes scrollTrack{
+  0%{transform:translateX(0);}
+  40%{transform:translateX(calc(-100% + 150px));}
+  60%{transform:translateX(calc(-100% + 150px));}
+  100%{transform:translateX(0);}
+}
+
+#player-controls{
+  display:flex;align-items:center;gap:.5rem;
+}
+.p-btn{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(56,189,248,.1);
+  border:1px solid rgba(56,189,248,.3);
+  color:var(--electric);font-size:.9rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .15s,border-color .2s;
+  flex-shrink:0;
+}
+.p-btn:hover{background:rgba(56,189,248,.25);transform:scale(1.12);border-color:var(--electric);}
+#music-btn{
+  width:40px;height:40px;font-size:1.1rem;
+  background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(129,140,248,.18));
+  border:1.5px solid var(--electric);
+}
+#music-btn:hover{background:linear-gradient(135deg,rgba(56,189,248,.32),rgba(129,140,248,.32));}
+
+/* ══ MOBILE FIXES ══ */
+@media(max-width:768px){
+  section{padding:4rem 1.2rem;}
+  .hero{padding:6rem 1.2rem 3rem;}
+  .tl-wrap{padding-left:2rem;}
+  .tl-dot{left:-1.5rem;}
+  .proj-card{padding:1.8rem 1.3rem;}
+  .basra-section{padding:4rem 1.2rem;}
+  #music-player{min-width:180px;max-width:210px;bottom:1rem;left:.8rem;}
+}
+@media(max-width:480px){
+  .hero-stats{gap:1rem 2rem;}
+  .hs-num{font-size:1.8rem;}
+  .about-grid{gap:2rem;}
+}
+</style>
+</head>
+<body>
+
+<audio id="bg-audio" preload="auto"></audio>
+
+<!-- ══ MUSIC PLAYER WIDGET ══ -->
+<div id="music-player">
+  <div id="track-info">
+    <span id="track-name">موسيقى</span>
+  </div>
+  <div id="player-controls">
+    <button class="p-btn" id="prev-btn" title="المقطع السابق">⏮</button>
+    <button class="p-btn" id="music-btn" title="تشغيل / إيقاف">♪</button>
+    <button class="p-btn" id="next-btn" title="المقطع التالي">⏭</button>
+  </div>
+</div>
+
+<canvas id="cv"></canvas>
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="logo">
+    <div class="logo-dot"></div>
+    MM<span style="color:var(--gold)">.</span>IQ
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">من أنا</a></li>
+    <li><a href="#achievements">الإنجازات</a></li>
+    <li><a href="#skills">المهارات</a></li>
+    <li><a href="#timeline">المسيرة</a></li>
+    <li><a href="#interests">الاهتمامات</a></li>
+    <li><a href="#basra">البصرة</a></li>
+  </ul>
+  <div class="nav-pill">BASRA · IRAQ · 2026</div>
+  <button class="hamburger" id="hbg" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mMenu">
+  <a href="#about" onclick="closeMM()">من أنا</a>
+  <a href="#achievements" onclick="closeMM()">الإنجازات</a>
+  <a href="#skills" onclick="closeMM()">المهارات</a>
+  <a href="#timeline" onclick="closeMM()">المسيرة</a>
+  <a href="#interests" onclick="closeMM()">الاهتمامات</a>
+  <a href="#basra" onclick="closeMM()">البصرة</a>
+</div>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-wrap" style="margin-top:60px;">
+  <div class="marquee-track">
+    <span>🇮🇶 البصرة — حي الأصدقاء</span><span class="m-sep">✦</span>
+    <span class="m-hi">معدل 95% · إعفاء عام</span><span class="m-sep">✦</span>
+    <span>📚 45 كتاباً مقروءاً</span><span class="m-sep">✦</span>
+    <span class="m-hi">150+ فيلم</span><span class="m-sep">✦</span>
+    <span>✍️ 150 نص ومقال</span><span class="m-sep">✦</span>
+    <span class="m-hi">العربية & English</span><span class="m-sep">✦</span>
+    <span>🔒 أمن سيبراني</span><span class="m-sep">✦</span>
+    <span class="m-hi">🤖 ذكاء اصطناعي</span><span class="m-sep">✦</span>
+    <span>مولود 2 مايو 2008</span><span class="m-sep">✦</span>
+    <span class="m-hi">الأخ الأكبر 👑</span><span class="m-sep">✦</span>
+    <span>185 سم</span><span class="m-sep">✦</span>
+    <!-- repeat -->
+    <span>🇮🇶 البصرة — حي الأصدقاء</span><span class="m-sep">✦</span>
+    <span class="m-hi">معدل 95% · إعفاء عام</span><span class="m-sep">✦</span>
+    <span>📚 45 كتاباً مقروءاً</span><span class="m-sep">✦</span>
+    <span class="m-hi">150+ فيلم</span><span class="m-sep">✦</span>
+    <span>✍️ 150 نص ومقال</span><span class="m-sep">✦</span>
+    <span class="m-hi">العربية & English</span><span class="m-sep">✦</span>
+    <span>🔒 أمن سيبراني</span><span class="m-sep">✦</span>
+    <span class="m-hi">🤖 ذكاء اصطناعي</span><span class="m-sep">✦</span>
+    <span>مولود 2 مايو 2008</span><span class="m-sep">✦</span>
+    <span class="m-hi">الأخ الأكبر 👑</span><span class="m-sep">✦</span>
+    <span>185 سم</span><span class="m-sep">✦</span>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      طالب · مفكر · مبدع · بصراوي
+    </div>
+    <h1 class="hero-name">
+      <span class="n1">محمد محسن</span>
+      <span class="n2" id="heroSub">عقل يبني المستقبل</span>
+    </h1>
+    <p class="hero-sub">
+      ابن <strong>البصرة — حي الأصدقاء</strong> · الأخ الأكبر ·
+      طالب سادس علمي متفوق بمعدل <strong>95%</strong> ·
+      يقرأ ويكتب ويرى العالم بعيون لا تهدأ
+    </p>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-num counter" data-t="18">0</span><div class="hs-lbl">عاماً</div></div>
+      <div class="hs"><span class="hs-num counter" data-t="95">0</span><div class="hs-lbl">معدل الإعفاء %</div></div>
+      <div class="hs"><span class="hs-num counter" data-t="150">0</span><div class="hs-lbl">فيلم مشاهد</div></div>
+      <div class="hs"><span class="hs-num counter" data-t="345">0</span><div class="hs-lbl">كتاب + نص + فيلم</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#about" class="btn-p">اكتشف عالمي ←</a>
+      <a href="#achievements" class="btn-s">إنجازاتي</a>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <span>scroll</span>
+    <div class="scroll-mouse"></div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="sec-inner">
+    <div class="sec-tag">من أنا</div>
+    <h2 class="sec-h">شاب يصنع <em>أثره</em><br>قبل أن يُصنع له</h2>
+    <div class="about-grid">
+      <!-- Visual -->
+      <div class="about-visual rev-l">
+        <div class="avatar-wrap">
+          <div class="avatar-rings">
+            <div class="ring-outer"></div>
+            <div class="ring-mid"></div>
+            <div class="avatar-core">
+              <div class="avatar-emoji">🧠</div>
+              <div class="avatar-init">م · م</div>
+            </div>
+          </div>
+          <div class="info-pills">
+            <div class="pill"><span class="pill-icon">📍</span>حي الأصدقاء · البصرة</div>
+            <div class="pill"><span class="pill-icon">🎂</span>2 مايو 2008</div>
+            <div class="pill"><span class="pill-icon">📏</span>185 سم</div>
+            <div class="pill"><span class="pill-icon">👑</span>الأخ الأكبر</div>
+            <div class="pill"><span class="pill-icon">🎓</span>سادس علمي</div>
+            <div class="pill"><span class="pill-icon">🏆</span>إعفاء عام 95%</div>
+          </div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="rev-r">
+        <p class="about-desc">
+          أنا <strong>محمد محسن</strong>، مولود في الثاني من مايو 2008 في
+          <strong>حي الأصدقاء بالبصرة</strong>، عروس الخليج وموطن الحضارة. الابن الأكبر في عائلتي —
+          وهي مسؤولية أحملها بفخر وتقدير. طولي 185 سم، وطموحي أكبر.
+          حصلت على <strong>إعفاء عام بمعدل 95%</strong> في الخامس العلمي،
+          وأنا الآن أشق طريقي في السادس العلمي بنفس العزيمة وأكثر.
+          لا أقرأ لأجتاز الامتحان — أقرأ لأن المعرفة سلاح لا يُنزع.
+          لا أكتب لأُكمل واجباً — أكتب لأن في داخلي كلاماً لا يهدأ.
+        </p>
+        <div class="info-rows">
+          <div class="ir">
+            <span class="ir-icon">🇮🇶</span>
+            <div><span class="ir-label">الموقع</span><span class="ir-val">البصرة — حي الأصدقاء، العراق</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">👨‍👧‍👦</span>
+            <div><span class="ir-label">الترتيب الأسري</span><span class="ir-val">الأخ الأكبر — ركيزة العائلة</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">🎓</span>
+            <div><span class="ir-label">المرحلة</span><span class="ir-val">السادس العلمي · متفوق</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">🏅</span>
+            <div><span class="ir-label">الإعفاء العام</span><span class="ir-val">الخامس العلمي — معدل 95%</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">🌐</span>
+            <div><span class="ir-label">اللغات</span><span class="ir-val">العربية (لغة أم) · الإنجليزية</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">💻</span>
+            <div><span class="ir-label">التقنية</span><span class="ir-val">مطوّر مواقع · مهتم بالذكاء الاصطناعي</span></div>
+          </div>
+          <div class="ir">
+            <span class="ir-icon">📧</span>
+            <div><span class="ir-label">البريد الإلكتروني</span><span class="ir-val"><a href="mailto:mmhsm16@gmail.com" style="color:var(--electric);text-decoration:none;">mmhsm16@gmail.com</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ ACHIEVEMENTS ══ -->
+<section class="ach-section" id="achievements">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">الإنجازات</div>
+      <h2 class="sec-h">أرقام <em>لا تُزوَّر</em></h2>
+      <p class="sec-p">كل رقم هنا يمثل ساعات حقيقية من الجهد والشغف والإصرار</p>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card c-g rev">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-title">الإعفاء العام</div>
+        <div class="ach-num cn-g">95<span style="font-size:1.2rem;">%</span></div>
+        <div class="ach-desc">معدل الخامس العلمي — إعفاء كامل من الرسوم الجامعية. ليس حظاً، بل نتيجة حتمية لعقل لا يكل.</div>
+      </div>
+      <div class="ach-card c-e rev">
+        <div class="ach-icon">🎬</div>
+        <div class="ach-title">أفلام مشاهدة</div>
+        <div class="ach-num cn-e">150<span style="font-size:1.2rem;">+</span></div>
+        <div class="ach-desc">أكثر من 150 فيلم عبر مختلف الأنواع والحقب والثقافات — عقل يفهم الإنسان من خلال فنّه.</div>
+      </div>
+      <div class="ach-card c-v rev">
+        <div class="ach-icon">📚</div>
+        <div class="ach-title">كتب مقروءة</div>
+        <div class="ach-num cn-v">45</div>
+        <div class="ach-desc">45 كتاباً في التاريخ والسياسة والتقنية والفلسفة والأدب — مكتبة داخل رأس شاب بعمر 18 سنة.</div>
+      </div>
+      <div class="ach-card c-p rev">
+        <div class="ach-icon">✍️</div>
+        <div class="ach-title">نصوص ومقالات</div>
+        <div class="ach-num cn-p">150</div>
+        <div class="ach-desc">150 نصاً ومقالاً مكتوباً — صوت شاب بصراوي يعبّر عن رؤيته ويترك أثراً بالكلمة.</div>
+      </div>
+      <div class="ach-card c-e rev">
+        <div class="ach-icon">💻</div>
+        <div class="ach-title">تطوير مواقع</div>
+        <div class="ach-num cn-e" style="font-size:1.8rem;">مطوّر</div>
+        <div class="ach-desc">طوّر موقعه الشخصي بنفسه في عمر 18 — مهارة تقنية حقيقية تجمع الإبداع بالبرمجة.</div>
+      </div>
+      <div class="ach-card c-g rev">
+        <div class="ach-icon">👑</div>
+        <div class="ach-title">الأخ الأكبر</div>
+        <div class="ach-num cn-g" style="font-size:1.8rem;">رقم 1</div>
+        <div class="ach-desc">المسؤولية الأولى في العائلة — يحمل هذا اللقب بفخر ويعرف ثقله وقيمته.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<section class="ticker-section">
+  <div class="ticker-grid">
+    <div class="tg rev">
+      <span class="tg-val"><span class="ca" data-t="345">0</span><span class="tg-suf">+</span></span>
+      <div class="tg-lbl">مجموع الإنجازات الإبداعية<br>(كتب + نصوص + أفلام)</div>
+    </div>
+    <div class="tg rev">
+      <span class="tg-val"><span class="ca" data-t="18">0</span></span>
+      <div class="tg-lbl">عاماً من الشغف<br>والتميز المتواصل</div>
+    </div>
+    <div class="tg rev">
+      <span class="tg-val"><span class="ca" data-t="185">0</span></span>
+      <div class="tg-lbl">سم قامة وطموح<br>لا يعرف الحدود</div>
+    </div>
+    <div class="tg rev">
+      <span class="tg-val"><span class="ca" data-t="2">0</span></span>
+      <div class="tg-lbl">لغتان يتحدثهما<br>العربية والإنجليزية</div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">المهارات</div>
+      <h2 class="sec-h">أسلحتي في<br>ميدان <em>المعرفة</em></h2>
+      <p class="sec-p">كل مهارة بنيتها بيدَيّ — لا من منهج مدرسي بل من شغف حقيقي</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-box rev">
+        <div class="sk-head"><div class="sk-icon">🤖</div><div class="sk-title">الذكاء الاصطناعي والتقنية</div></div>
+        <div class="sk-bars">
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">فهم نماذج الذكاء الاصطناعي</span><span class="sb-pct">88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">تطوير المواقع الإلكترونية</span><span class="sb-pct">80%</span></div><div class="sb-track"><div class="sb-fill" data-w="80"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">متابعة التقنيات الحديثة</span><span class="sb-pct">93%</span></div><div class="sb-track"><div class="sb-fill" data-w="93"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-box rev">
+        <div class="sk-head"><div class="sk-icon">🔐</div><div class="sk-title">الأمن السيبراني</div></div>
+        <div class="sk-bars">
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">المفاهيم الأساسية</span><span class="sb-pct">82%</span></div><div class="sb-track"><div class="sb-fill" data-w="82"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">التفكير التحليلي الأمني</span><span class="sb-pct">79%</span></div><div class="sb-track"><div class="sb-fill" data-w="79"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">الوعي بالتهديدات الرقمية</span><span class="sb-pct">85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-box rev">
+        <div class="sk-head"><div class="sk-icon">📖</div><div class="sk-title">القراءة والكتابة</div></div>
+        <div class="sk-bars">
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">كتابة المقالات والنصوص</span><span class="sb-pct">91%</span></div><div class="sb-track"><div class="sb-fill" data-w="91"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">التحليل النقدي</span><span class="sb-pct">88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">استيعاب المعلومات وترتيبها</span><span class="sb-pct">95%</span></div><div class="sb-track"><div class="sb-fill" data-w="95"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-box rev">
+        <div class="sk-head"><div class="sk-icon">🌐</div><div class="sk-title">السياسة والتاريخ</div></div>
+        <div class="sk-bars">
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">التحليل السياسي</span><span class="sb-pct">84%</span></div><div class="sb-track"><div class="sb-fill" data-w="84"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">الأحداث التاريخية الكبرى</span><span class="sb-pct">89%</span></div><div class="sb-track"><div class="sb-fill" data-w="89"></div></div></div>
+          <div class="sb-item"><div class="sb-row"><span class="sb-name">الوعي الجيوسياسي</span><span class="sb-pct">81%</span></div><div class="sb-track"><div class="sb-fill" data-w="81"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ LANGUAGES ══ -->
+<section class="lang-section" id="languages">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">اللغات</div>
+      <h2 class="sec-h">أتحدث بـ<em>حضارتين</em></h2>
+      <p class="sec-p">كل لغة نافذة على عالم مختلف وطريقة تفكير فريدة لا تكرار فيها</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card lang-ar rev">
+        <span class="lc-flag">🇮🇶</span>
+        <div class="lc-name">العربية</div>
+        <div class="lc-level">لغة الأم — Native</div>
+        <div class="lc-desc">لغة الضاد، لغة القرآن والشعر والهوية. جذر كل شيء وأساس كل كلمة.</div>
+      </div>
+      <div class="lang-card lang-en rev">
+        <span class="lc-flag">🌍</span>
+        <div class="lc-name">English</div>
+        <div class="lc-level">Proficient — متقدم</div>
+        <div class="lc-desc">لغة العلم والتكنولوجيا والمستقبل. اخترتها بوعي لأن من لا يتقنها يفوّت نصف العالم.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ TIMELINE ══ -->
+<section id="timeline">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">المسيرة</div>
+      <h2 class="sec-h">رحلة <em>18 عاماً</em><br>من قلب البصرة</h2>
+      <p class="sec-p">كل محطة أضافت بُعداً جديداً لمن أنا، وكل يوم بنى فوق الذي قبله</p>
+    </div>
+    <div class="tl-wrap">
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-e"></div>
+        <div class="tl-year">2 مايو 2008</div>
+        <div class="tl-event">🌟 البداية — وُلد محمد محسن في حي الأصدقاء · البصرة</div>
+        <div class="tl-detail">في أحد أجمل أحياء عروس الخليج — حي الأصدقاء — جاء طفل ليس كغيره. البصرة التي تحمل في أزقتها تاريخاً من الحضارة والتجارة والشعر علّمته منذ الصغر: أن الجغرافيا لا تحدد الطموح.</div>
+        <span class="tl-badge">BORN · حي الأصدقاء · BASRA</span>
+      </div>
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-e"></div>
+        <div class="tl-year">2014 — 2020</div>
+        <div class="tl-event">📖 المرحلة الابتدائية — البذرة الأولى للفضول</div>
+        <div class="tl-detail">لم يكن مجرد تلميذ يحفظ الدروس، بل طفل يسأل "لماذا؟" أكثر مما يسأل "ماذا؟". الفضول الذي رافقه في الابتدائية هو نفسه الذي يقوده اليوم نحو الذكاء الاصطناعي والأمن السيبراني.</div>
+        <span class="tl-badge">ELEMENTARY · CURIOUS</span>
+      </div>
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-v"></div>
+        <div class="tl-year">2020 — 2023</div>
+        <div class="tl-event">🔭 المتوسطة — اكتشاف عوالم السياسة والتاريخ والتقنية</div>
+        <div class="tl-detail">انتقل الاهتمام من مجرد الدراسة إلى عشق حقيقي للمعرفة. بدأت مرحلة القراءة الجادة، والتعمق في ثلاثة مجالات ستبقى ثوابته: السياسة، التاريخ، والتقنية.</div>
+        <span class="tl-badge">MIDDLE SCHOOL · DISCOVERING</span>
+      </div>
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-g"></div>
+        <div class="tl-year">2024</div>
+        <div class="tl-event">🏆 الخامس العلمي — إعفاء عام بمعدل 95%</div>
+        <div class="tl-detail">اللحظة التي أثبت فيها أن التفوق ليس حظاً — بل هو نتيجة حتمية لعقل منضبط وإرادة لا تُكسر. 95% في الخامس العلمي، إعفاء عام كامل، وباب مفتوح نحو مستقبل بلا سقف.</div>
+        <span class="tl-badge tl-badge-g">95% · EXEMPT · ACHIEVEMENT</span>
+      </div>
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-e"></div>
+        <div class="tl-year">2025</div>
+        <div class="tl-event">💻 تطوير موقعه الإلكتروني الشخصي بنفسه</div>
+        <div class="tl-detail">أضاف إلى قائمة إنجازاته مهارة تقنية حقيقية — برمجة وتصميم موقع إلكتروني احترافي. ليس من منهج دراسي، بل من فضول ورغبة حقيقية في التعلم الذاتي.</div>
+        <span class="tl-badge">SELF-TAUGHT DEV · WEB</span>
+      </div>
+      <div class="tl-item rev">
+        <div class="tl-dot tl-dot-g"></div>
+        <div class="tl-year">2025 — 2026</div>
+        <div class="tl-event">🚀 السادس العلمي — الفصل الأخير قبل الانطلاق</div>
+        <div class="tl-detail">الآن. طالب يقف على عتبة مستقبله، يحمل 45 كتاباً، 150 فيلماً، 150 نصاً، ولغتين، وطموحاً لا يشبه أقرانه. والمستقبل؟ لم يبدأ بعد.</div>
+        <span class="tl-badge tl-badge-g">NOW · LIMITLESS · البصرة 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ CREATIVE FLOATING CARDS ══ -->
+<section class="creative-section">
+  <div class="creative-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">ما يميزني</div>
+      <h2 class="sec-h">أربعة <em>أوجه</em> لشخص واحد</h2>
+      <p class="sec-p">شخصية متعددة الأبعاد لا تقتصر على تعريف واحد</p>
+    </div>
+    <div class="float-cards">
+      <div class="fc rev">
+        <span class="fc-icon">📚</span>
+        <div class="fc-title">القارئ</div>
+        <span class="fc-val">45</span>
+        <div class="fc-desc">كتاباً في مجالات متنوعة تغذّي العقل وتوسّع الأفق</div>
+      </div>
+      <div class="fc rev">
+        <span class="fc-icon">✍️</span>
+        <div class="fc-title">الكاتب</div>
+        <span class="fc-val">150</span>
+        <div class="fc-desc">نصاً ومقالاً يحمل رؤية شاب يرفض الصمت</div>
+      </div>
+      <div class="fc rev">
+        <span class="fc-icon">🎬</span>
+        <div class="fc-title">المحلّل</div>
+        <span class="fc-val">150+</span>
+        <div class="fc-desc">فيلماً شاهده وفهم من خلاله الإنسانية والفن</div>
+      </div>
+      <div class="fc rev">
+        <span class="fc-icon">💡</span>
+        <div class="fc-title">المبتكر</div>
+        <span class="fc-val">∞</span>
+        <div class="fc-desc">أفكار لا تنضب ومشاريع تُبنى بيد من لا ينتظر الإذن</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ INTERESTS ══ -->
+<section class="int-section" id="interests">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">الاهتمامات</div>
+      <h2 class="sec-h">عوالم <em>تشكّل</em> هويتي</h2>
+      <p class="sec-p">شغفي بهذه المجالات ليس هواية عابرة — بل محاور حياة كاملة</p>
+    </div>
+    <div class="int-grid">
+      <div class="int-card rev"><span class="int-em">🤖</span><div class="int-name">الذكاء الاصطناعي</div><div class="int-note">مستقبل لا مفر منه</div></div>
+      <div class="int-card rev"><span class="int-em">🔐</span><div class="int-name">الأمن السيبراني</div><div class="int-note">درع الحضارة الرقمية</div></div>
+      <div class="int-card rev"><span class="int-em">🏛️</span><div class="int-name">السياسة</div><div class="int-note">فهم كيف يدار العالم</div></div>
+      <div class="int-card rev"><span class="int-em">⏳</span><div class="int-name">التاريخ</div><div class="int-note">الماضي مرآة الحاضر</div></div>
+      <div class="int-card rev"><span class="int-em">💻</span><div class="int-name">التقنية والبرمجة</div><div class="int-note">لغة هذا القرن</div></div>
+      <div class="int-card rev"><span class="int-em">🎬</span><div class="int-name">السينما</div><div class="int-note">فن يروي الإنسانية</div></div>
+      <div class="int-card rev"><span class="int-em">📖</span><div class="int-name">القراءة</div><div class="int-note">45 كتاب وما زال</div></div>
+      <div class="int-card rev"><span class="int-em">✒️</span><div class="int-name">الكتابة</div><div class="int-note">150 نص وتزداد</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<div class="quote-section">
+  <span class="qm">"</span>
+  <p class="qt">
+    لا تنتظر أن يُعطوك المكان — ابنه بيديك.<br>
+    لا تنتظر أن يأذنوا لك — ابدأ الآن من حيث أنت.
+  </p>
+  <div class="qa">— محمد محسن · البصرة · 2026</div>
+</div>
+
+<div class="gline"></div>
+
+<!-- ══ BASRA PRIDE ══ -->
+<section class="basra-section" id="basra">
+  <div class="basra-bg-text">البصرة</div>
+  <div class="basra-inner rev">
+    <span class="basra-flag">🇮🇶</span>
+    <h2 class="basra-title">ابن <em>البصرة</em><br>بكل فخر</h2>
+    <p class="basra-sub">
+      البصرة ليست مجرد مدينة على الخريطة — إنها هوية، تاريخ، روح.
+      عروس الخليج، موطن الشعراء والتجار والمحاربين.
+      من حي الأصدقاء خرجت، وإلى العالم أسعى — حاملاً اسم مدينتي أينما ذهبت.
+      الانتماء للبصرة ليس صدفة — هو شرف وامتياز.
+    </p>
+    <div class="basra-info">
+      <div class="bi"><span class="bi-val">🏙️ البصرة</span><span class="bi-lbl">عروس الخليج</span></div>
+      <div class="bi"><span class="bi-val">حي الأصدقاء</span><span class="bi-lbl">موطني الأصيل</span></div>
+      <div class="bi"><span class="bi-val">🇮🇶 العراق</span><span class="bi-lbl">أرض الرافدين</span></div>
+      <div class="bi"><span class="bi-val">الأخ الأكبر</span><span class="bi-lbl">مسؤولية ومكانة</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ══ PROJECT ══ -->
+<section id="project">
+  <div class="sec-inner">
+    <div class="sec-center rev">
+      <div class="sec-tag">المشروع</div>
+      <h2 class="sec-h">موقعي الإلكتروني<br><em>صنعته بيدَيّ</em></h2>
+    </div>
+    <div class="proj-card rev">
+      <div class="proj-tag">// FEATURED PROJECT · 2025</div>
+      <div class="proj-title">الموقع الشخصي لمحمد محسن</div>
+      <p class="proj-desc">
+        هذا الموقع ليس مجرد صفحات على الإنترنت — هو تعبير رقمي كامل عن هوية محمد محسن.
+        صُمِّم وطُوِّر بجهد شخصي حقيقي، يجمع بين التصميم الحديث والرسوم المتحركة السلسة
+        والمحتوى الأصيل. من الجسيمات الطائرة في الخلفية إلى مؤشر الفأرة المخصص،
+        كل تفصيلة تعكس شخصية صاحبه: الاهتمام بالتفاصيل، والطموح نحو الاحترافية.
+      </p>
+      <div class="tech-tags">
+        <span class="tt">HTML5</span>
+        <span class="tt">CSS3 ANIMATIONS</span>
+        <span class="tt">VANILLA JS</span>
+        <span class="tt">CANVAS API</span>
+        <span class="tt">INTERSECTION OBSERVER</span>
+        <span class="tt">RESPONSIVE RTL</span>
+        <span class="tt">CUSTOM CURSOR</span>
+        <span class="tt">PARTICLE SYSTEM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-name">محمد محسن</div>
+  <p class="ft-sub">ابن البصرة · حي الأصدقاء · طالب · مفكر · مبدع · الأخ الأكبر</p>
+  <div class="ft-links">
+    <a href="#home">الرئيسية</a>
+    <a href="#about">من أنا</a>
+    <a href="#achievements">الإنجازات</a>
+    <a href="#skills">المهارات</a>
+    <a href="#timeline">المسيرة</a>
+    <a href="#interests">الاهتمامات</a>
+    <a href="#basra">البصرة</a>
+    <a href="#project">المشروع</a>
+  </div>
+  <div class="ft-sep">
+    <div class="ft-sep-line"></div>
+    <div class="ft-sep-dot"></div>
+    <div class="ft-sep-line"></div>
+  </div>
+  <div class="ft-bottom">
+    <em>محمد محسن</em> · البصرة — حي الأصدقاء · جمهورية العراق<br>
+    مولود في 2 مايو 2008 · جميع الحقوق محفوظة © 2026<br>
+    📧 <a href="mailto:mmhsm16@gmail.com" style="color:var(--electric);text-decoration:none;">mmhsm16@gmail.com</a><br><br>
+    صُمِّم وطُوِّر بـ ❤️ وبيدَين عراقيتَين أصيلتَين
+  </div>
+</footer>
+
+<script>
+/* ══ CURSOR ══ */
+const cur = document.getElementById('cur');
+const curR = document.getElementById('curRing');
+if(cur){
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function animC(){
+    cur.style.left=mx+'px';cur.style.top=my+'px';
+    rx+=(mx-rx)*.14;ry+=(my-ry)*.14;
+    curR.style.left=rx+'px';curR.style.top=ry+'px';
+    requestAnimationFrame(animC);
+  })();
+  document.querySelectorAll('a,button,.ach-card,.int-card,.lang-card,.fc,.ir').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';curR.style.transform='translate(-50%,-50%) scale(1.6)';curR.style.borderColor='var(--gold)';});
+    el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';curR.style.transform='translate(-50%,-50%) scale(1)';curR.style.borderColor='var(--electric)';});
+  });
+}
+
+/* ══ MOBILE NAV ══ */
+function closeMM(){document.getElementById('mMenu').classList.remove('open');}
+document.getElementById('hbg').addEventListener('click',()=>{
+  document.getElementById('mMenu').classList.toggle('open');
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('#hbg')&&!e.target.closest('#mMenu')) closeMM();
+});
+
+/* ══ NAV SCROLL ══ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.background=
+    window.scrollY>60?'rgba(5,5,16,.97)':'rgba(5,5,16,.8)';
+});
+
+/* ══ PARTICLES ══ */
+const cv=document.getElementById('cv');
+const ctx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;}
+resize();window.addEventListener('resize',resize);
+class P{
+  constructor(){this.r();}
+  r(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;
+    this.rad=Math.random()*1.4+.4;
+    this.a=Math.random()*.35+.08;
+    const c=Math.random();
+    this.c=c<.6?'56,189,248':c<.85?'129,140,248':'251,191,36';
+  }
+  u(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.r();}
+  d(){ctx.beginPath();ctx.arc(this.x,this.y,this.rad,0,Math.PI*2);ctx.fillStyle=`rgba(${this.c},${this.a})`;ctx.fill();}
+}
+for(let i=0;i<100;i++)pts.push(new P());
+function drawLines(){
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist<110){
+      ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+      ctx.strokeStyle=`rgba(56,189,248,${.07*(1-dist/110)})`;ctx.lineWidth=.5;ctx.stroke();
+    }
+  }
+}
+(function animP(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.u();p.d();});drawLines();requestAnimationFrame(animP);})();
+
+/* ══ COUNT ANIM ══ */
+function countTo(el,target,dur){
+  let s=null;
+  (function step(ts){
+    if(!s)s=ts;
+    const prog=Math.min((ts-s)/dur,1);
+    el.textContent=Math.floor((1-Math.pow(1-prog,3))*target);
+    if(prog<1)requestAnimationFrame(step);else el.textContent=target;
+  })(0);/* call via rAF */
+  requestAnimationFrame(function step(ts){
+    if(!s)s=ts;
+    const prog=Math.min((ts-s)/dur,1);
+    el.textContent=Math.floor((1-Math.pow(1-prog,3))*target);
+    if(prog<1)requestAnimationFrame(step);else el.textContent=target;
+  });
+}
+/* hero counters start immediately */
+document.querySelectorAll('.counter').forEach(el=>countTo(el,+el.dataset.t,2200));
+
+/* ══ SCROLL REVEAL + LAZY COUNTERS ══ */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('vis'),i*70);
+      ro.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.rev,.rev-l,.rev-r').forEach(el=>ro.observe(el));
+
+/* section counters */
+const ro2=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      countTo(e.target,+e.target.dataset.t,1800);
+      ro2.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.ca').forEach(el=>ro2.observe(el));
+
+/* skill bars */
+const ro3=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';ro3.unobserve(e.target);}
+  });
+},{threshold:.2});
+document.querySelectorAll('.sb-fill').forEach(el=>ro3.observe(el));
+
+/* ══ TYPING HERO ══ */
+const phrases=['عقل يبني المستقبل','ابن البصرة الأصيل','طالب ومفكر وكاتب','شاب يصنع أثره'];
+let pi=0,ci=0,del=false,tEl=document.getElementById('heroSub');
+function typeEffect(){
+  if(!tEl)return;
+  const word=phrases[pi];
+  if(!del){
+    tEl.textContent=word.slice(0,++ci);
+    if(ci===word.length){del=true;setTimeout(typeEffect,2200);return;}
+  }else{
+    tEl.textContent=word.slice(0,--ci);
+    if(ci===0){del=false;pi=(pi+1)%phrases.length;}
+  }
+  setTimeout(typeEffect,del?60:100);
+}
+setTimeout(typeEffect,1800);
+
+/* ══ MUSIC PLAYER ══ */
+const audio = document.getElementById('bg-audio');
+const musicBtn = document.getElementById('music-btn');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const trackNameEl = document.getElementById('track-name');
+const playerEl = document.getElementById('music-player');
+
+const playlist = [
+  { src: 'audio/background-music.m4a',  title: 'موسيقى الخلفية' },
+  { src: 'audio/bab-alsaaat.m4a',       title: 'باب الساعات — سيد سلام الحسيني' },
+  { src: 'audio/monajaati.m4a',         title: 'مناجاتي — باسم الكربلائي' },
+  { src: 'audio/ya-amah.m4a',           title: 'ياعمه ليالي — سيد سلام الحسيني' },
+];
+
+let currentIdx = 0;
+let audioStarted = false;
+
+function loadTrack(idx, autoplay) {
+  currentIdx = (idx + playlist.length) % playlist.length;
+  audio.src = playlist[currentIdx].src;
+  audio.loop = false;
+  const title = playlist[currentIdx].title;
+  trackNameEl.textContent = title;
+  trackNameEl.classList.remove('scroll-text');
+  void trackNameEl.offsetWidth;
+  if (title.length > 18) trackNameEl.classList.add('scroll-text');
+  if (autoplay) {
+    audio.play().then(() => {
+      musicBtn.textContent = '♫';
+      playerEl.classList.add('playing');
+    }).catch(() => {});
+  }
+}
+
+audio.addEventListener('ended', () => {
+  loadTrack(currentIdx + 1, true);
+});
+
+function startAudio() {
+  if (!audioStarted) {
+    audioStarted = true;
+    loadTrack(0, true);
+  }
+}
+
+/* Auto-play on first interaction */
+['click','keydown','scroll','touchstart'].forEach(ev => {
+  document.addEventListener(ev, startAudio, { once: true });
+});
+
+/* Play / Pause */
+musicBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  if (!audioStarted) { startAudio(); return; }
+  if (audio.paused) {
+    audio.play();
+    musicBtn.textContent = '♫';
+    playerEl.classList.add('playing');
+  } else {
+    audio.pause();
+    musicBtn.textContent = '♪';
+    playerEl.classList.remove('playing');
+  }
+});
+
+/* Previous */
+prevBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  const wasPlaying = !audio.paused;
+  loadTrack(currentIdx - 1, wasPlaying || audioStarted);
+  if (!audioStarted) audioStarted = true;
+});
+
+/* Next */
+nextBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  const wasPlaying = !audio.paused;
+  loadTrack(currentIdx + 1, wasPlaying || audioStarted);
+  if (!audioStarted) audioStarted = true;
+});
+
+/* ── Swipe gesture (mobile) ── */
+let touchStartX = 0;
+playerEl.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].clientX;
+}, { passive: true });
+playerEl.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 40) {
+    const wasPlaying = !audio.paused;
+    if (dx < 0) loadTrack(currentIdx + 1, wasPlaying || audioStarted);
+    else         loadTrack(currentIdx - 1, wasPlaying || audioStarted);
+    if (!audioStarted) audioStarted = true;
+  }
+}, { passive: true });
+</script>
+</body>
+</html>
